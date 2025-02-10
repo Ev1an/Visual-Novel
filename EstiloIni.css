@@ -5,7 +5,7 @@
 
 
 /* Estilos para dispositivos móviles */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .container {
       width: 100%;
     }
@@ -38,6 +38,7 @@ body{
 
 
 ul{
+    border-top: 1px solid white;
     list-style: none;
     text-align: center;
     padding-right: 30px;

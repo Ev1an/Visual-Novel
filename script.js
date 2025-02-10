@@ -1,6 +1,6 @@
 const textElement = document.getElementById('text');
 const text = "El último suspiro del mar";
-const speed = 70; // Velocidad en milisegundos
+const speed = 60; // Velocidad en milisegundos
 
 let i = 0;
 
