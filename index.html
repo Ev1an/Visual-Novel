@@ -3,84 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <link rel="stylesheet" href="EstiloIni.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="EstiloIni.css">
     <title>Novela Visual</title>
 </head>
 <body>
 
-
     <audio id="miAudio" src="Soundtracks/Test.mp3"></audio>
 
-
-
-
-
-
-
     <div class="Inicio">
-       <h3 id="text"></h3>
-       <hr>
         <div class="container">
-
-            <ul>
-
-                <li><a href="Base/carga.html" id="Jugar">Jugar</a></li>
-                <li><a href="" id="Continuar">Continuar</a></li>
-                <li><a href="">Ajustes</a></li>
-                <li><a href="">Escenas</a></li>
-                <li><a href="">Créditos</a></li>
-
-
+            <h3 id="text" class="text-center"></h3>
+            <hr>
+            <ul class="list-unstyled">
+                <li><a class="btn btn-primary btn-block" href="Base/carga.html" id="Jugar">Jugar</a></li>
+                <li><a class="btn btn-secondary btn-block" href="" id="Continuar">Continuar</a></li>
+                <li><a class="btn btn-secondary btn-block" href="">Ajustes</a></li>
+                <li><a class="btn btn-secondary btn-block" href="">Escenas</a></li>
+                <li><a class="btn btn-secondary btn-block" href="">Créditos</a></li>
             </ul>
-
-
-
         </div>
 
-        <br><p>
-        <div class="Footer">
-           
+        <div class="Footer text-center mt-4">
             <footer style="font-size: 12px;">By FantasyDreams</footer>
-
         </div>
-
     </div>
     
     <script src="script.js"></script>
-    
     <script>
-
         document.addEventListener("DOMContentLoaded", function() {
             var audio = document.getElementById("miAudio");
-            //Intentar reproducir la musica automaticamente
             var playPromise = audio.play();
-            if(playPromise !== undefined){
-                playPromise.catch(function(error){
-                    let texto = ' "Reproducir musica" '
-                    alert(`Si la musica no se inicializa presione ${texto} `);
-                    //Reproduccion automatica fallida
-                    var playButton= document.createElement("button");
-                    playButton.innerHTML = "Reproducir musica"
-                    playButton.style.position = "absolute";
-                    playButton.style.bottom = "5%";
-                    playButton.style.left = "8%";
-                    playButton.style.transform = "translate(-50%, -50%)";
+            if (playPromise !== undefined) {
+                playPromise.catch(function(error) {
+                    alert('Si la musica no se inicializa presione "Reproducir musica"');
+                    var playButton = document.createElement("button");
+                    playButton.innerHTML = "Reproducir musica";
+                    playButton.classList.add('btn', 'btn-primary', 'position-fixed', 'bottom-0', 'start-0', 'm-3');
                     document.body.appendChild(playButton);
-
-                    playButton.addEventListener("click",function(){
+                    playButton.addEventListener("click", function() {
                         audio.play();
-                        playButton.style.display ="none";
-                    })
-                })
+                        playButton.style.display = "none";
+                    });
+                });
             }
         });
-        
-        
-        
-            </script>
-        
+    </script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
