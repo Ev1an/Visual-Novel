@@ -43,7 +43,7 @@ function nextDialogue(){
  */
 function startAdventure() {
     currentTimeout = setTimeout(() => {
-        typeText('Debes estar listo para afrontar los desafios y misterios de a obra , no es apto para sensibles ¡Comienza!. . .', 'dialogueText', firstChoice);
+        typeText('Debes estar listo para afrontar los desafios y misterios de la obra , no es apto para sensibles ¡Comienza!. . .', 'dialogueText', firstChoice);
     }, 200);
 }
 
