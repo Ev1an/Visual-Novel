@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <link rel="stylesheet" href="EstiloIni.css">
+
+    <title>Novela Visual</title>
+</head>
+<body>
+
+
+    <audio id="miAudio" src="Soundtracks/Test.mp3"></audio>
+
+
+
+
+
+
+
+    <div class="Inicio">
+       <h3 id="text"></h3>
+       <hr>
+        <div class="container">
+
+            <ul>
+
+                <li><a href="Base/carga.html" id="Jugar">Jugar</a></li>
+                <li><a href="" id="Continuar">Continuar</a></li>
+                <li><a href="">Ajustes</a></li>
+                <li><a href="">Escenas</a></li>
+                <li><a href="">Créditos</a></li>
+
+
+            </ul>
+
+
+
+        </div>
+
+        <br><p>
+        <div class="Footer">
+           
+            <footer style="font-size: 12px;">By FantasyDreams</footer>
+
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+    
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("miAudio");
+            //Intentar reproducir la musica automaticamente
+            var playPromise = audio.play();
+            if(playPromise !== undefined){
+                playPromise.catch(function(error){
+                    let texto = ' "Reproducir musica" '
+                    alert(`Si la musica no se inicializa presione ${texto} `);
+                    //Reproduccion automatica fallida
+                    var playButton= document.createElement("button");
+                    playButton.innerHTML = "Reproducir musica"
+                    playButton.style.position = "absolute";
+                    playButton.style.bottom = "5%";
+                    playButton.style.left = "8%";
+                    playButton.style.transform = "translate(-50%, -50%)";
+                    document.body.appendChild(playButton);
+
+                    playButton.addEventListener("click",function(){
+                        audio.play();
+                        playButton.style.display ="none";
+                    })
+                })
+            }
+        });
+        
+        
+        
+            </script>
+        
+
+</body>
+</html>

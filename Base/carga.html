@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Carga</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #252525c2;
+            color: #fff;
+            margin: 0;
+        }
+        .loading-screen {
+            text-align: center;
+        }
+        .spinner {
+            margin: 0 auto;
+            width: 60px;
+            height: 60px;
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-text {
+            margin-top: 20px;
+            padding-top: 10px;
+            padding-left: 20px;
+            font-size: 30px;
+            animation: fadeInOut 2s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p class="loading-text">Cargando...</p>
+    </div>
+
+    <script>
+        function showLoadingScreen() {
+            document.querySelector('.loading-screen').style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = 'Juego.html'; 
+            }, 2000); 
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showLoadingScreen();
+        });
+    </script>
+</body>
