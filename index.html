@@ -39,7 +39,7 @@
                     alert('Si la musica no se inicializa presione "Reproducir musica"');
                     var playButton = document.createElement("button");
                     playButton.innerHTML = "Reproducir musica";
-                    playButton.classList.add('btn', 'btn-primary', 'position-fixed', 'bottom-0', 'start-0', 'm-3');
+                    playButton.classList.add('btn', 'btn-primary', 'position-fixed', 'top-0', 'start-0', 'm-3');
                     document.body.appendChild(playButton);
                     playButton.addEventListener("click", function() {
                         audio.play();
@@ -55,6 +55,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
 
