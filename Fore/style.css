@@ -22,7 +22,7 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: url('https://i.imgur.com/t8BZgUO.jpg') no-repeat center center fixed; /* URL de una imagen de nebulosa */
+   
     background-size: cover;
 }
 
