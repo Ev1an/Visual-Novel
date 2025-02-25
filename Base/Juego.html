@@ -18,16 +18,9 @@
         <div class="input-section" id="inputSection" style="display: none;"></div>
     </div>
 
-    <audio id="miAudio" src="/Visual-Novel/Soundtracks/prueba3.mp3"></audio>
+    <audio src="/Frontend/Proyectos/VisualNovel/Soundtracks/prueba3.mp3" autoplay></audio>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var audio = document.getElementById("miAudio");
-            audio.play().catch(function(error) {
-                console.log("La reproducción automática fue bloqueada por el navegador.");
-            });
-        });
-    </script>
+ 
 </body>
 </html>

@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="EstiloIni.css">
+
+    <!-- Etiquetas de SEO -->
+
+    <meta name="description" content="Novela visual web , El ultimo suspiro del mar">
+    <meta name="keywords" content="Novela Visual Web , Web Visual Novel  , El ultimo suspiro del mar , Juego Web , Web game ,Novelas Visuales , Fun Visual Novel , Novela Visual Triste">
+
+
     <title>Novela Visual</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 
-    <audio id="miAudio" src="Soundtracks/Test.mp3"></audio>
+    
+  
+    <audio id="miAudio" autoplay>
+        <source src="Soundtracks/Test.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio
+    </audio>
 
     <div class="Inicio">
         <div class="container">
@@ -20,14 +34,19 @@
                 <li><a class="btn btn-secondary btn-block" href="" id="Continuar">Continuar</a></li>
                 <li><a class="btn btn-secondary btn-block" href="">Ajustes</a></li>
                 <li><a class="btn btn-secondary btn-block" href="">Escenas</a></li>
-                <li><a class="btn btn-secondary btn-block" href="">Créditos</a></li>
+                <li><a class="btn btn-secondary btn-block" href="Fore/Contact.html">Contáctenos</a></li>
             </ul>
         </div>
 
         <div class="Footer text-center mt-4">
-            <footer style="font-size: 12px;">By Vfantasy Ev1an.</footer>
+            <footer style="font-size: 12px;">By Vfantasy</footer>
         </div>
     </div>
+      <!-- Fondo con animación -->
+      <div class="background-animation">
+        <div class="stars"></div>
+    </div>
+
     
     <script src="script.js"></script>
     <script>
@@ -36,15 +55,28 @@
             var playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.catch(function(error) {
-                    alert('Si la musica no se inicializa presione "Reproducir musica"');
-                    var playButton = document.createElement("button");
-                    playButton.innerHTML = "Reproducir musica";
-                    playButton.classList.add('btn', 'btn-primary', 'position-fixed', 'top-0', 'start-0', 'm-3');
-                    document.body.appendChild(playButton);
-                    playButton.addEventListener("click", function() {
-                        audio.play();
-                        playButton.style.display = "none";
+                    swal({
+                        title:"Hola!",
+                        text: "Bienvenido a nuestra Novela Visual , si le gusta puede contactar al Equipo VFantasy 😊.",
+                        icon:"success",
+                        button:{
+                            confirm:{
+                                text:"Iniciar",
+                                value: true,
+                                visible:true,
+                                className: "btn-confirm",
+                                closeModal: true
+                            }
+                        } 
+                    }).then((value)=>{
+                        if(value){
+                            audio.play()
+                        }
                     });
+
+
+                    
+                 
                 });
             }
         });
